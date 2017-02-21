@@ -1,17 +1,21 @@
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
+import {Router, Route, browserHistory} from 'react-router'
 
-const IndexComponent = React.createClass({
+//Components for routes
+import Nav from './components/nav.component'
+
+var App = React.createClass({
   render () {
     return (
-      <div>
-        <p>Booyah</p>
-      </div>
+      <Router history={browserHistory}>
+        <Route path={'/'} component={Nav}></Route>
+      </Router>
     )
   }
 })
 
 ReactDOM.render(
-    <IndexComponent/>, document.getElementById('index-wrapper'))
+    <App />, document.getElementById('index-wrapper'))
 
-export default IndexComponent
+export default App
