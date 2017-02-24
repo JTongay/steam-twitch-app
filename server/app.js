@@ -6,26 +6,28 @@ const port = process.env.PORT || 3000;
 
 //MiddleWare
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 //API Modules
 const Twitch = require('twitch-api');
 const Steam = require('steam-api');
-// const steamClient = new Steam.SteamClient();
-// const steamUser = new Steam.SteamUser(steamClient)
 const Blizzard = require('blizzard.js');
 
 Blizzard.initialize({
   apikey: process.env.BLIZZARD_API_KEY
 })
 
+const steamApp = new Steam.App(process.env.STEAM_API_KEY)
+const steamPlayer = new Steam.Player(process.env.STEAM_API_KEY, process.env.MY_STEAM_ID)
+
 const twitch = new Twitch({
     clientId: process.env.TWITCH_API_ID,
     clientSecret: process.env.TWITCH_API_SECRET,
     redirectUri: process.env.TWITCH_API_REDIRECT,
-    scopes: ['user_read', 'channel_read']
+    scopes: ['user_read', 'channel_read', 'channel_feed_read']
   });
 
-twitch.getChannel('day9tv', function(err, res){
+twitch.getChannelChat('day9tv', function(err, res){
   if(err){
     console.log(err);
   } else {
@@ -33,7 +35,13 @@ twitch.getChannel('day9tv', function(err, res){
   }
 })
 
+// steamApp.GetAppList().done(function(result){
+//   console.log(result);
+// });
 
+steamPlayer.GetOwnedGames(process.env.MY_STEAM_ID).done((res)=>{
+  console.log(res);
+})
 //Listening
 app.listen(port, function () {
   console.log('hello from', port);
