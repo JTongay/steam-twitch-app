@@ -28,6 +28,7 @@ const NavComponent = React.createClass({
                         </ul>
                     </div>
                 </nav>
+                <h1>Booyah</h1>
             </div>
         )
     }
