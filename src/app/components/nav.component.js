@@ -1,5 +1,8 @@
 import React, {PropTypes} from 'react'
 
+//Other components importing
+import HomeComponent from './home.component'
+
 const NavComponent = React.createClass({
     render() {
         return (
@@ -28,7 +31,6 @@ const NavComponent = React.createClass({
                         </ul>
                     </div>
                 </nav>
-                <h1>Booyah</h1>
             </div>
         )
     }

@@ -4,12 +4,15 @@ import {Router, Route, browserHistory} from 'react-router'
 
 //Components for routes
 import Nav from './components/nav.component'
+import Home from './components/home.component'
 
 var App = React.createClass({
   render () {
     return (
       <Router history={browserHistory}>
-        <Route path={'/'} component={Nav}></Route>
+        <Route path={'/'} component={Nav}>
+          <Route path={'/home'} component={Home}></Route>
+        </Route>
       </Router>
     )
   }
