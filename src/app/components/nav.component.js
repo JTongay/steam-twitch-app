@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import {Link} from 'react-router'
 
 //Other components importing
 import HomeComponent from './home.component'
@@ -15,12 +16,12 @@ const NavComponent = React.createClass({
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <a className="nav-link" href="#">Home
+                                <Link to={'/home'} className="nav-link">Home
                                     <span className="sr-only">(current)</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Features</a>
+                                <Link to={'/body'} className="nav-link">Body</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Pricing</a>
