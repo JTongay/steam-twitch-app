@@ -1,8 +1,10 @@
 import React, {PropTypes} from 'react'
-import {Link} from 'react-router'
+import ReactDOM from 'react-dom'
+import {Router, Route, browserHistory, Link} from 'react-router';
 
 //Other components importing
 import HomeComponent from './home.component'
+import App from '../index'
 
 const NavComponent = React.createClass({
     render() {
@@ -16,7 +18,7 @@ const NavComponent = React.createClass({
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <Link to={'/home'} className="nav-link">Home
+                                <Link to={'/'} className="nav-link">Home
                                     <span className="sr-only">(current)</span>
                                 </Link>
                             </li>
@@ -36,5 +38,7 @@ const NavComponent = React.createClass({
         )
     }
 })
+
+ReactDOM.render(<NavComponent />, document.getElementById('router-outlet'))
 
 export default NavComponent
