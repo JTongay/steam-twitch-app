@@ -6,10 +6,13 @@ const port = process.env.PORT || 3000;
 const mongoose = require( 'mongoose' );
 
 //Mongo Stuff
+//Reset the promise library of mongoose to the global javascript promise library
 mongoose.Promise = global.Promise
 
+//Connect to DB
 mongoose.connect( 'mongodb://localhost/twitch-client' )
 
+//Error handling and connection message
 mongoose.connection.once( 'open', () => {
     console.log( 'You are connected, hooray!' );
 } ).on( 'error', ( err ) => {

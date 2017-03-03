@@ -18,12 +18,12 @@ const NavComponent = React.createClass({
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item active">
-                                <Link to={'/'} className="nav-link">Home
+                                <Link to='/' className="nav-link">Home
                                     <span className="sr-only">(current)</span>
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={'/body'} className="nav-link">Body</Link>
+                                <Link to='/body' className="nav-link">Body</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Pricing</a>
@@ -34,11 +34,14 @@ const NavComponent = React.createClass({
                         </ul>
                     </div>
                 </nav>
+                <div id="router-outlet">
+                  {this.props.children}
+                </div>
             </div>
         )
     }
 })
 
-ReactDOM.render(<NavComponent />, document.getElementById('router-outlet'))
+ReactDOM.render(<NavComponent />, document.getElementById('wrapper'))
 
 export default NavComponent
