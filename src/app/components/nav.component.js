@@ -34,14 +34,9 @@ const NavComponent = React.createClass({
                         </ul>
                     </div>
                 </nav>
-                <div id="router-outlet">
-                  {this.props.children}
-                </div>
             </div>
         )
     }
 })
-
-ReactDOM.render(<NavComponent />, document.getElementById('wrapper'))
 
 export default NavComponent
