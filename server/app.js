@@ -42,6 +42,12 @@ require( 'dotenv' ).config();
 //     scopes: [ 'user_read', 'channel_read', 'channel_feed_read' ]
 // } );
 
+//import routes
+const twitchStuff = require('./routes/twitch.routes')
+//Use routes
+app.use(twitchStuff)
+
+
 //Listening
 app.listen( port, function () {
     console.log( 'hello from', port );
