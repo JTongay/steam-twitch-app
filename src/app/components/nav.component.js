@@ -26,7 +26,7 @@ const NavComponent = React.createClass({
                                 <Link to='/body' className="nav-link">Body</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Pricing</a>
+                                <Link to="/about" className="nav-link">About</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link disabled" href="#">Disabled</a>

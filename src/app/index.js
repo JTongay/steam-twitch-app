@@ -15,6 +15,7 @@ const App = React.createClass({
           <Route path="/" component={Main}>
             <Route path="/home" component={Home}></Route>
             <Route path='/body' component={Body}></Route>
+            <Route path="/about" component={Home}></Route>
           </Route>
         </Router>
     )
