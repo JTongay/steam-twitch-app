@@ -14,7 +14,8 @@ const twitch = new Twitch( {
 
 
 router.get('/getTwitch', (req, res, next)=>{
-  twitch.getChannel('day9tv', (result)=>{
+  twitch.getChannel('hsdogdog', (result)=>{
+    console.log(result);
     res.json(result)
   })
 })
