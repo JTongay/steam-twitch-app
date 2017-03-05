@@ -3,15 +3,40 @@ import axios from 'axios'
 
 const HomeComponent = React.createClass({
 
+  getInitialState(){
+    return {
+      pokemon: []
+    }
+  },
+
+  getPokemon(data, cb){
+    this.pokemon = data;
+    console.log(this.pokemon);
+    cb()
+  },
+
+  rerender(){
+    this.setState({
+      pokemon: []
+    })
+  },
+
   componentWillMount(){
       axios.get('http://pokeapi.co/api/v2/pokemon/1').then((res)=>{
         console.log(res.data);
+        this.setState({
+          pokemon: res.data
+        })
       })
   },
 
   render () {
     return (
-      <h1>Welcome to the Home Page</h1>
+      <div>
+        <h1>Welcome to the Home Page</h1>
+        <p>{this.state.pokemon.name}</p>
+        <p>{this.state.pokemon.name}</p>
+      </div>
     )
   }
 })
