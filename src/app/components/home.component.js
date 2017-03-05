@@ -33,7 +33,7 @@ const HomeComponent = React.createClass({
   render () {
     return (
       <div>
-        <h1>Welcome to the Home Page</h1>
+        <h1>Discover your favorite channel on Twitch</h1>
         <p>{this.state.pokemon.name}</p>
         <p>{this.state.pokemon.name}</p>
       </div>
